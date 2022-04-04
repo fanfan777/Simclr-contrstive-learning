@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -p GPU-shared
+#SBATCH -t 4:59:00
+#SBATCH -o weak10.out
+#SBATCH --gpus=1
+
+
+date
+
+
+module load anaconda3/2020.11
+module load cuda/10.2.0
+
+#conda activate myenv
+#source activate /jet/home/fan/.conda/envs/myenv
+#eval "$(conda shell.bash hook)"
+source activate myenv
+
+python3 -u weak10.py 
+
